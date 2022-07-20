@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ruleset name="Innocode">
+  <description>Innocode Coding Standards.</description>
+
+  <exclude-pattern>*/.github/*</exclude-pattern>
+  <exclude-pattern>*/assets/*</exclude-pattern>
+  <exclude-pattern>*/bower-components/*</exclude-pattern>
+  <exclude-pattern>*/languages/*</exclude-pattern>
+  <exclude-pattern>*/node_modules/*</exclude-pattern>
+  <exclude-pattern>*/vendor/*</exclude-pattern>
+  <exclude-pattern>*/webpack/*</exclude-pattern>
+
+  <arg name="extensions" value="php" />
+
+  <rule ref="PHPCompatibilityWP" />
+
+  <rule ref="WordPress-Docs">
+    <exclude name="Squiz.Commenting.FileComment.Missing" />
+    <exclude name="Squiz.Commenting.DocComment.ShortDescription" />
+    <exclude name="Generic.Commenting.DocComment.MissingShort" />
+    <exclude name="Squiz.Commenting.ClassComment.Missing" />
+    <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
+    <exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
+  </rule>
+
+  <rule ref="WordPress-Extra">
+    <exclude name="WordPress.Files.FileName" />
+    <exclude name="Generic.Arrays.DisallowShortArraySyntax" />
+    <exclude name="WordPress.PHP.DisallowShortTernary" />
+  </rule>
+
+  <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
+
+  <rule ref="PSR1.Classes.ClassDeclaration" />
+
+  <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
+  <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/>
+</ruleset>
