@@ -20,6 +20,3 @@ logs
 # IDE
 .idea/
 .vscode/
-
-# Temp
-src/
