@@ -1,6 +1,6 @@
 {
   "name": "innocode-digital/php-cs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "phpcodesniffer-standard",
   "description": "Innocode Coding Standards.",
   "license": "MIT",
