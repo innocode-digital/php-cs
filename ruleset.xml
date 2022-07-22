@@ -147,8 +147,10 @@
 				<element value="wp_nonce_url" />
 
 				<element value="__" />
+				<element value="_e" />
 				<element value="_n" />
 				<element value="_x" />
+				<element value="_ex" />
 				<element value="_nx" />
 				<element value="date_i18n" />
 				<element value="number_format_i18n" />
