@@ -17,31 +17,46 @@
 
   <rule ref="WordPress-Docs">
 		<exclude name="Generic.Commenting.DocComment.MissingShort" />
-		<exclude name="Squiz.Commenting.FileComment.Missing" />
 		<exclude name="Squiz.Commenting.DocComment.ShortDescription" />
+
+		<exclude name="Squiz.Commenting.FileComment.Missing" />
+		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />
+
     <exclude name="Squiz.Commenting.ClassComment.Missing" />
+
     <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
     <exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
   </rule>
 
   <rule ref="WordPress-Extra">
-    <exclude name="Generic.Arrays.DisallowShortArraySyntax" />
-    <exclude name="Generic.CodeAnalysis.EmptyStatement.DetectedCatch" />
-    <exclude name="WordPress.Files.FileName" />
+		<exclude name="WordPress.Files.FileName" />
+
+		<exclude name="Generic.Arrays.DisallowShortArraySyntax" />
+
+		<exclude name="Generic.CodeAnalysis.EmptyStatement.DetectedCatch" />
+
+		<exclude name="WordPress.PHP.DisallowShortTernary" />
+
+		<exclude name="WordPress.PHP.YodaConditions" />
+
 		<exclude name="WordPress.PHP.DevelopmentFunctions.error_log_error_log" />
 		<exclude name="WordPress.PHP.DevelopmentFunctions.error_log_print_r" />
 		<exclude name="WordPress.PHP.DevelopmentFunctions.error_log_trigger_error" />
-		<exclude name="WordPress.PHP.DisallowShortTernary" />
-		<exclude name="WordPress.PHP.YodaConditions" />
 		<exclude name="WordPress.WP.AlternativeFunctions.json_decode_json_decode" />
 		<exclude name="WordPress.WP.AlternativeFunctions.json_encode_json_encode" />
 		<exclude name="WordPress.WP.AlternativeFunctions.parse_url_parse_url" />
+
+		<exclude name="Generic.PHP.DisallowShortOpenTag" />
+		<exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon" />
   </rule>
 
+	<!-- Disallow long array syntax. -->
   <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
 
+	<!-- Enforce PSR1 compatible namespaces. -->
   <rule ref="PSR1.Classes.ClassDeclaration" />
 
+	<!-- Namespace statements. -->
   <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
   <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses" />
 </ruleset>
