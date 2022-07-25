@@ -1,0 +1,26 @@
+<?php
+
+namespace Innocode\Coding\Standards\Tests;
+
+use Innocode\Other;
+use WP_Post;
+
+function some_function( $some_argument )
+{
+    $variable = 'some string';
+
+    return $variable;
+}
+
+class MyTestClass
+{
+    public function __construct()
+    {
+        do_something();
+    }
+
+    public function another_function()
+    {
+        return null;
+    }
+}
