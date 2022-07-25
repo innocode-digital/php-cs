@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <ruleset name="Innocode">
   <description>Innocode Coding Standards.</description>
+	<rule ref="./Innocode/ruleset.xml" />
 
 	<exclude-pattern>*/.git/*</exclude-pattern>
 	<exclude-pattern>*/.github/*</exclude-pattern>
