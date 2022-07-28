@@ -49,7 +49,10 @@
 		<exclude name="Generic.PHP.DisallowShortOpenTag" />
 		<exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon" />
 
-		<exclude name="WordPress.Security.NonceVerification.Missing" />
+		<exclude name="WordPress.Security.EscapeOutput" />
+		<exclude name="WordPress.Security.NonceVerification" />
+
+		<exclude name="WordPress.WP.I18n" />
   </rule>
 
 	<!-- Disallow long array syntax. -->
@@ -63,7 +66,7 @@
   <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses" />
 
 	<!-- Require output to be escaped but allow a list of core functions. -->
-	<rule ref="WordPress.Security.EscapeOutput">
+	<rule ref="Innocode.Security.EscapeOutput">
 		<properties>
 			<property name="customAutoEscapedFunctions" type="array">
 				<element value="get_the_permalink" />
@@ -147,13 +150,14 @@
 				<element value="wp_nonce_url" />
 
 				<element value="__" />
-				<element value="_e" />
 				<element value="_n" />
 				<element value="_x" />
-				<element value="_ex" />
 				<element value="_nx" />
 				<element value="date_i18n" />
 				<element value="number_format_i18n" />
+
+				<element value="TEXT_DOMAIN" />
+				<element value="CHILD_TEXT_DOMAIN" />
 
 				<element value="get_the_title" />
 				<element value="get_the_excerpt" />
@@ -164,4 +168,7 @@
 			</property>
 		</properties>
 	</rule>
+	<rule ref="Innocode.Security.NonceVerification" />
+
+	<rule ref="Innocode.WP.I18n" />
 </ruleset>
