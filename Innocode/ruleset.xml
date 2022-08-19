@@ -171,4 +171,7 @@
 	<rule ref="Innocode.Security.NonceVerification"/>
 
 	<rule ref="Innocode.WP.I18n"/>
+
+	<rule ref="Innocode.Whitespace.EmptyLineBeforeReturn"/>
+	<rule ref="Innocode.Whitespace.MultipleEmptyLines"/>
 </ruleset>
