@@ -1,174 +1,174 @@
 <?xml version="1.0"?>
 <ruleset name="Innocode">
-  <description>Innocode Coding Standards.</description>
+	<description>Innocode Coding Standards.</description>
 
 	<exclude-pattern>*/.git/*</exclude-pattern>
 	<exclude-pattern>*/.github/*</exclude-pattern>
-  <exclude-pattern>*/assets/*</exclude-pattern>
-  <exclude-pattern>*/bower-components/*</exclude-pattern>
-  <exclude-pattern>*/languages/*</exclude-pattern>
-  <exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/assets/*</exclude-pattern>
+	<exclude-pattern>*/bower-components/*</exclude-pattern>
+	<exclude-pattern>*/languages/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 	<exclude-pattern>*/webpack/*</exclude-pattern>
 
-  <arg name="extensions" value="php" />
+	<arg name="extensions" value="php"/>
 
-  <rule ref="PHPCompatibilityWP" />
+	<rule ref="PHPCompatibilityWP"/>
 
-  <rule ref="WordPress-Docs">
-		<exclude name="Generic.Commenting.DocComment.MissingShort" />
-		<exclude name="Squiz.Commenting.DocComment.ShortDescription" />
+	<rule ref="WordPress-Docs">
+		<exclude name="Generic.Commenting.DocComment.MissingShort"/>
+		<exclude name="Squiz.Commenting.DocComment.ShortDescription"/>
 
-		<exclude name="Squiz.Commenting.FileComment.Missing" />
-		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />
+		<exclude name="Squiz.Commenting.FileComment.Missing"/>
+		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag"/>
 
-    <exclude name="Squiz.Commenting.ClassComment.Missing" />
+		<exclude name="Squiz.Commenting.ClassComment.Missing"/>
 
-    <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
-    <exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
-  </rule>
+		<exclude name="Squiz.Commenting.FunctionComment.MissingParamComment"/>
+		<exclude name="Squiz.Commenting.FunctionComment.MissingParamTag"/>
+	</rule>
 
-  <rule ref="WordPress-Extra">
-		<exclude name="WordPress.Files.FileName" />
+	<rule ref="WordPress-Extra">
+		<exclude name="WordPress.Files.FileName"/>
 
-		<exclude name="Generic.Arrays.DisallowShortArraySyntax" />
+		<exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
 
-		<exclude name="Generic.CodeAnalysis.EmptyStatement.DetectedCatch" />
+		<exclude name="Generic.CodeAnalysis.EmptyStatement.DetectedCatch"/>
 
-		<exclude name="WordPress.PHP.DisallowShortTernary" />
+		<exclude name="WordPress.PHP.DisallowShortTernary"/>
 
-		<exclude name="WordPress.PHP.YodaConditions" />
+		<exclude name="WordPress.PHP.YodaConditions"/>
 
-		<exclude name="WordPress.PHP.DevelopmentFunctions.error_log_error_log" />
-		<exclude name="WordPress.PHP.DevelopmentFunctions.error_log_print_r" />
-		<exclude name="WordPress.PHP.DevelopmentFunctions.error_log_trigger_error" />
-		<exclude name="WordPress.WP.AlternativeFunctions.json_decode_json_decode" />
-		<exclude name="WordPress.WP.AlternativeFunctions.json_encode_json_encode" />
-		<exclude name="WordPress.WP.AlternativeFunctions.parse_url_parse_url" />
+		<exclude name="WordPress.PHP.DevelopmentFunctions.error_log_error_log"/>
+		<exclude name="WordPress.PHP.DevelopmentFunctions.error_log_print_r"/>
+		<exclude name="WordPress.PHP.DevelopmentFunctions.error_log_trigger_error"/>
+		<exclude name="WordPress.WP.AlternativeFunctions.json_decode_json_decode"/>
+		<exclude name="WordPress.WP.AlternativeFunctions.json_encode_json_encode"/>
+		<exclude name="WordPress.WP.AlternativeFunctions.parse_url_parse_url"/>
 
-		<exclude name="Generic.PHP.DisallowShortOpenTag" />
-		<exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon" />
+		<exclude name="Generic.PHP.DisallowShortOpenTag"/>
+		<exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon"/>
 
-		<exclude name="WordPress.Security.EscapeOutput" />
-		<exclude name="WordPress.Security.NonceVerification" />
+		<exclude name="WordPress.Security.EscapeOutput"/>
+		<exclude name="WordPress.Security.NonceVerification"/>
 
-		<exclude name="WordPress.WP.I18n" />
-  </rule>
+		<exclude name="WordPress.WP.I18n"/>
+	</rule>
 
 	<!-- Disallow long array syntax. -->
-  <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
+	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
 
 	<!-- Enforce PSR1 compatible namespaces. -->
-  <rule ref="PSR1.Classes.ClassDeclaration" />
+	<rule ref="PSR1.Classes.ClassDeclaration"/>
 
 	<!-- Namespace statements. -->
-  <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
-  <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses" />
+	<rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
+	<rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/>
 
 	<!-- Require output to be escaped but allow a list of core functions. -->
 	<rule ref="Innocode.Security.EscapeOutput">
 		<properties>
 			<property name="customAutoEscapedFunctions" type="array">
-				<element value="get_the_permalink" />
-				<element value="get_permalink" />
-				<element value="get_post_permalink" />
-				<element value="get_page_link" />
-				<element value="get_attachment_link" />
-				<element value="get_year_link" />
-				<element value="get_month_link" />
-				<element value="get_day_link" />
-				<element value="get_feed_link" />
-				<element value="get_post_comments_feed_link" />
-				<element value="get_author_feed_link" />
-				<element value="get_category_feed_link" />
-				<element value="get_term_feed_link" />
-				<element value="get_tag_feed_link" />
-				<element value="get_edit_tag_link" />
-				<element value="get_edit_term_link" />
-				<element value="get_search_link" />
-				<element value="get_search_feed_link" />
-				<element value="get_search_comments_feed_link" />
-				<element value="get_post_type_archive_link" />
-				<element value="get_post_type_archive_feed_link" />
-				<element value="get_preview_post_link" />
-				<element value="get_edit_post_link" />
-				<element value="get_delete_post_link" />
-				<element value="get_edit_comment_link" />
-				<element value="get_edit_bookmark_link" />
-				<element value="get_edit_user_link" />
-				<element value="get_adjacent_post_rel_link" />
-				<element value="get_boundary_post" />
-				<element value="get_previous_post_link" />
-				<element value="get_next_post_link" />
-				<element value="get_adjacent_post_link" />
-				<element value="get_pagenum_link" />
-				<element value="get_next_posts_page_link" />
-				<element value="get_next_posts_link" />
-				<element value="get_previous_posts_page_link" />
-				<element value="get_previous_posts_link" />
-				<element value="get_posts_nav_link" />
-				<element value="get_the_post_navigation" />
-				<element value="get_the_posts_navigation" />
-				<element value="get_the_posts_pagination" />
-				<element value="get_comments_pagenum_link" />
-				<element value="get_next_comments_link" />
-				<element value="get_previous_comments_link" />
-				<element value="get_the_comments_navigation" />
-				<element value="get_the_comments_pagination" />
-				<element value="home_url" />
-				<element value="get_home_url" />
-				<element value="site_url" />
-				<element value="get_site_url" />
-				<element value="admin_url" />
-				<element value="get_admin_url" />
-				<element value="includes_url" />
-				<element value="content_url" />
-				<element value="plugins_url" />
-				<element value="network_site_url" />
-				<element value="network_home_url" />
-				<element value="network_admin_url" />
-				<element value="user_admin_url" />
-				<element value="self_admin_url" />
-				<element value="get_dashboard_url" />
-				<element value="get_edit_profile_url" />
-				<element value="wp_get_canonical_url" />
-				<element value="wp_get_shortlink" />
-				<element value="get_avatar_url" />
-				<element value="get_privacy_policy_url" />
-				<element value="get_the_privacy_policy_link" />
+				<element value="get_the_permalink"/>
+				<element value="get_permalink"/>
+				<element value="get_post_permalink"/>
+				<element value="get_page_link"/>
+				<element value="get_attachment_link"/>
+				<element value="get_year_link"/>
+				<element value="get_month_link"/>
+				<element value="get_day_link"/>
+				<element value="get_feed_link"/>
+				<element value="get_post_comments_feed_link"/>
+				<element value="get_author_feed_link"/>
+				<element value="get_category_feed_link"/>
+				<element value="get_term_feed_link"/>
+				<element value="get_tag_feed_link"/>
+				<element value="get_edit_tag_link"/>
+				<element value="get_edit_term_link"/>
+				<element value="get_search_link"/>
+				<element value="get_search_feed_link"/>
+				<element value="get_search_comments_feed_link"/>
+				<element value="get_post_type_archive_link"/>
+				<element value="get_post_type_archive_feed_link"/>
+				<element value="get_preview_post_link"/>
+				<element value="get_edit_post_link"/>
+				<element value="get_delete_post_link"/>
+				<element value="get_edit_comment_link"/>
+				<element value="get_edit_bookmark_link"/>
+				<element value="get_edit_user_link"/>
+				<element value="get_adjacent_post_rel_link"/>
+				<element value="get_boundary_post"/>
+				<element value="get_previous_post_link"/>
+				<element value="get_next_post_link"/>
+				<element value="get_adjacent_post_link"/>
+				<element value="get_pagenum_link"/>
+				<element value="get_next_posts_page_link"/>
+				<element value="get_next_posts_link"/>
+				<element value="get_previous_posts_page_link"/>
+				<element value="get_previous_posts_link"/>
+				<element value="get_posts_nav_link"/>
+				<element value="get_the_post_navigation"/>
+				<element value="get_the_posts_navigation"/>
+				<element value="get_the_posts_pagination"/>
+				<element value="get_comments_pagenum_link"/>
+				<element value="get_next_comments_link"/>
+				<element value="get_previous_comments_link"/>
+				<element value="get_the_comments_navigation"/>
+				<element value="get_the_comments_pagination"/>
+				<element value="home_url"/>
+				<element value="get_home_url"/>
+				<element value="site_url"/>
+				<element value="get_site_url"/>
+				<element value="admin_url"/>
+				<element value="get_admin_url"/>
+				<element value="includes_url"/>
+				<element value="content_url"/>
+				<element value="plugins_url"/>
+				<element value="network_site_url"/>
+				<element value="network_home_url"/>
+				<element value="network_admin_url"/>
+				<element value="user_admin_url"/>
+				<element value="self_admin_url"/>
+				<element value="get_dashboard_url"/>
+				<element value="get_edit_profile_url"/>
+				<element value="wp_get_canonical_url"/>
+				<element value="wp_get_shortlink"/>
+				<element value="get_avatar_url"/>
+				<element value="get_privacy_policy_url"/>
+				<element value="get_the_privacy_policy_link"/>
 
-				<element value="get_term_link" />
-				<element value="get_category_link" />
-				<element value="get_tag_link" />
+				<element value="get_term_link"/>
+				<element value="get_category_link"/>
+				<element value="get_tag_link"/>
 
-				<element value="get_stylesheet_directory_uri" />
-				<element value="get_template_directory_uri" />
+				<element value="get_stylesheet_directory_uri"/>
+				<element value="get_template_directory_uri"/>
 
-				<element value="get_theme_file_uri" />
-				<element value="get_parent_theme_file_uri" />
+				<element value="get_theme_file_uri"/>
+				<element value="get_parent_theme_file_uri"/>
 
-				<element value="wp_nonce_url" />
+				<element value="wp_nonce_url"/>
 
-				<element value="__" />
-				<element value="_n" />
-				<element value="_x" />
-				<element value="_nx" />
-				<element value="date_i18n" />
-				<element value="number_format_i18n" />
+				<element value="__"/>
+				<element value="_n"/>
+				<element value="_x"/>
+				<element value="_nx"/>
+				<element value="date_i18n"/>
+				<element value="number_format_i18n"/>
 
-				<element value="TEXT_DOMAIN" />
-				<element value="CHILD_TEXT_DOMAIN" />
+				<element value="TEXT_DOMAIN"/>
+				<element value="CHILD_TEXT_DOMAIN"/>
 
-				<element value="get_the_title" />
-				<element value="get_the_excerpt" />
-				<element value="term_description" />
-				<element value="category_description" />
-				<element value="tag_description" />
-				<element value="paginate_links" />
+				<element value="get_the_title"/>
+				<element value="get_the_excerpt"/>
+				<element value="term_description"/>
+				<element value="category_description"/>
+				<element value="tag_description"/>
+				<element value="paginate_links"/>
 			</property>
 		</properties>
 	</rule>
-	<rule ref="Innocode.Security.NonceVerification" />
+	<rule ref="Innocode.Security.NonceVerification"/>
 
-	<rule ref="Innocode.WP.I18n" />
+	<rule ref="Innocode.WP.I18n"/>
 </ruleset>
