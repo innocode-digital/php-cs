@@ -1,15 +1,14 @@
 <?php
 /**
- * Check empty line before returns in a file.
+ * Check multiple consecutive newlines in a file.
  */
 
-namespace Innocode\Sniffs\Whitespace;
+namespace WPD\Sniffs\Whitespace;
 
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
-use PHP_CodeSniffer\Util\Tokens;
 
-class EmptyLineBeforeReturnSniff implements Sniff {
+class MultipleEmptyLinesSniff implements Sniff {
 
 	/**
 	 * Registers the tokens that this sniff wants to listen for.
@@ -18,7 +17,7 @@ class EmptyLineBeforeReturnSniff implements Sniff {
 	 */
 	public function register(): array {
 		return [
-			T_RETURN,
+			T_WHITESPACE,
 		];
 	}
 
@@ -37,41 +36,42 @@ class EmptyLineBeforeReturnSniff implements Sniff {
 	 *                                               was found.
 	 */
 	public function process( File $phpcs_file, $stack_ptr ) {
-		$tokens   = $phpcs_file->getTokens();
-		$previous = $phpcs_file->findPrevious(
-			Tokens::$emptyTokens, // phpcs:ignore
-			$stack_ptr - 1,
+		$tokens = $phpcs_file->getTokens();
+
+		if (
+			$stack_ptr <= 2
+			|| $tokens[ $stack_ptr - 1 ]['line'] >= $tokens[ $stack_ptr ]['line']
+			|| $tokens[ $stack_ptr - 2 ]['line'] !== $tokens[ $stack_ptr - 1 ]['line']
+		) {
+			return;
+		}
+
+		$next = $phpcs_file->findNext(
+			T_WHITESPACE,
+			$stack_ptr,
 			null,
 			true
 		);
 
-		if (
-			$tokens[ $stack_ptr ]['line'] - $tokens[ $previous ]['line'] === 1
-			&& $tokens[ $previous ]['type'] !== 'T_OPEN_CURLY_BRACKET'
-		) {
+		if ( $tokens[ $next ]['line'] - $tokens[ $stack_ptr ]['line'] > 1 ) {
 			$is_fixed = $phpcs_file->addFixableError(
-				'Add empty line before return statement in %d line.',
+				'Multiple empty lines should not exist in a row; found %s consecutive empty lines',
 				$stack_ptr,
-				'AddEmptyLineBeforeReturnStatement',
-				[ $tokens[ $stack_ptr ]['line'] ]
+				'MultipleEmptyLines',
+				[ $tokens[ $next ]['line'] - $tokens[ $stack_ptr ]['line'] ]
 			);
 
 			if ( $is_fixed === true ) {
-				$phpcs_file->fixer->addNewline( $previous );
-			}
-		} elseif (
-			$tokens[ $stack_ptr ]['line'] - $tokens[ $previous ]['line'] > 1
-			&& $tokens[ $previous ]['type'] === 'T_OPEN_CURLY_BRACKET'
-		) {
-			$is_fixed = $phpcs_file->addFixableError(
-				'Remove empty line before return statement in %d line.',
-				$stack_ptr,
-				'RemoveEmptyLineBeforeReturnStatement',
-				[ $tokens[ $previous ]['line'] + 1 ]
-			);
+				$phpcs_file->fixer->beginChangeset();
+				$index = $stack_ptr;
 
-			if ( $is_fixed === true ) {
-				$phpcs_file->fixer->replaceToken( $previous + 1, '' );
+				while ( $tokens[ $index ]['line'] !== $tokens[ $next ]['line'] ) {
+					$phpcs_file->fixer->replaceToken( $index, '' );
+					$index++;
+				}
+
+				$phpcs_file->fixer->addNewlineBefore( $index );
+				$phpcs_file->fixer->endChangeset();
 			}
 		}
 	}

@@ -1,6 +1,6 @@
 <?php
 
-namespace Innocode\Sniffs\Security;
+namespace WPD\Sniffs\Security;
 
 use WordPressCS\WordPress\Sniffs\Security\EscapeOutputSniff as WPCSEscapeOutputSniff;
 

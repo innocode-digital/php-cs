@@ -1,1 +1,1 @@
-# Innocode Coding Standards
+# WPD Coding Standards

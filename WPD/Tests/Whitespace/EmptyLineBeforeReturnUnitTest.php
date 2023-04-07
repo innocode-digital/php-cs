@@ -1,13 +1,13 @@
 <?php
 
-namespace Innocode\Tests\Whitespace;
+namespace WPD\Tests\Whitespace;
 
 use PHP_CodeSniffer\Tests\Standards\AbstractSniffUnitTest;
 
 /**
- * Class MultipleEmptyLinesUnitTest
+ * Class EmptyLineBeforeReturnUnitTest
  */
-class MultipleEmptyLinesUnitTest extends AbstractSniffUnitTest {
+class EmptyLineBeforeReturnUnitTest extends AbstractSniffUnitTest {
 
 	/**
 	 * Returns the lines where errors should occur.
@@ -17,15 +17,14 @@ class MultipleEmptyLinesUnitTest extends AbstractSniffUnitTest {
 	public function getErrorList() {
 		$file = func_get_arg( 0 );
 
-		if ( $file === 'MultipleEmptyLinesUnitTest.success' ) {
+		if ( $file === 'EmptyLineBeforeReturnUnitTest.success' ) {
 			return [];
 		}
 
 		return [
-			4  => 1,
-			12 => 1,
-			19 => 1,
-			25 => 1,
+			11 => 1,
+			24 => 1,
+			30 => 1,
 		];
 	}
 

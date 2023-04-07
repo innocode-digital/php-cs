@@ -7,7 +7,7 @@
  * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
  */
 
-namespace Innocode\CodingStandards\Tests;
+namespace WPD\CodingStandards\Tests;
 
 use PHP_CodeSniffer\Autoload;
 use PHP_CodeSniffer\Util\Standards;
@@ -44,11 +44,11 @@ class AllSniffs {
 		$GLOBALS['PHP_CODESNIFFER_SNIFF_CODES']   = [];
 		$GLOBALS['PHP_CODESNIFFER_FIXABLE_CODES'] = [];
 
-		$suite = new TestSuite( 'Innocode Standards' );
+		$suite = new TestSuite( 'WPD Standards' );
 
-		$standards_dir = dirname( __DIR__ ) . '/Innocode';
+		$standards_dir = dirname( __DIR__ ) . '/WPD';
 		$all_details   = Standards::getInstalledStandardDetails( false, $standards_dir );
-		$details       = $all_details['Innocode'];
+		$details       = $all_details['WPD'];
 
 		Autoload::addSearchPath( $details['path'], $details['namespace'] );
 

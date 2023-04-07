@@ -1,6 +1,6 @@
 <?php
 
-namespace Innocode\Sniffs\WP;
+namespace WPD\Sniffs\WP;
 
 use WordPressCS\WordPress\Sniffs\WP\I18nSniff as WPCSI18nSniff;
 

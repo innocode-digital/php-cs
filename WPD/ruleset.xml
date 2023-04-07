@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="Innocode">
-	<description>Innocode Coding Standards.</description>
+<ruleset name="WPD">
+	<description>WPD Coding Standards.</description>
 
 	<exclude-pattern>*/.git/*</exclude-pattern>
 	<exclude-pattern>*/.github/*</exclude-pattern>
@@ -66,7 +66,7 @@
 	<rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/>
 
 	<!-- Require output to be escaped but allow a list of core functions. -->
-	<rule ref="Innocode.Security.EscapeOutput">
+	<rule ref="WPD.Security.EscapeOutput">
 		<properties>
 			<property name="customAutoEscapedFunctions" type="array">
 				<element value="get_the_permalink"/>
@@ -168,10 +168,10 @@
 			</property>
 		</properties>
 	</rule>
-	<rule ref="Innocode.Security.NonceVerification"/>
+	<rule ref="WPD.Security.NonceVerification"/>
 
-	<rule ref="Innocode.WP.I18n"/>
+	<rule ref="WPD.WP.I18n"/>
 
-	<rule ref="Innocode.Whitespace.EmptyLineBeforeReturn"/>
-	<rule ref="Innocode.Whitespace.MultipleEmptyLines"/>
+	<rule ref="WPD.Whitespace.EmptyLineBeforeReturn"/>
+	<rule ref="WPD.Whitespace.MultipleEmptyLines"/>
 </ruleset>

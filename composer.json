@@ -1,13 +1,13 @@
 {
-  "name": "innocode-digital/php-cs",
-  "version": "1.3.1",
+  "name": "wp-digital/php-cs",
+  "version": "1.4.0",
   "type": "phpcodesniffer-standard",
-  "description": "Innocode Coding Standards.",
+  "description": "WPD Coding Standards.",
   "license": "MIT",
   "require": {
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
     "phpcompatibility/phpcompatibility-wp": "^2.1",
-    "slevomat/coding-standard": "^8.3",
+    "slevomat/coding-standard": "^8.9",
     "squizlabs/php_codesniffer": "^3.7",
     "wp-coding-standards/wpcs": "^2.3"
   },
@@ -25,7 +25,7 @@
     "post-install-cmd": "@install-cs",
     "post-update-cmd": "@install-cs",
 		"test": "phpunit",
-		"phpcs": "vendor/bin/phpcs --standard=Innocode .",
-		"phpcbf": "vendor/bin/phpcbf --standard=Innocode ."
+		"phpcs": "vendor/bin/phpcs --standard=WPD .",
+		"phpcbf": "vendor/bin/phpcbf --standard=WPD ."
 	}
 }

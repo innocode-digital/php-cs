@@ -1,6 +1,6 @@
 <?php
 
-namespace Innocode\Sniffs\Security;
+namespace WPD\Sniffs\Security;
 
 use PHP_CodeSniffer\Files\File;
 use WordPressCS\WordPress\Sniffs\Security\NonceVerificationSniff as WPCSNonceVerificationSniff;
