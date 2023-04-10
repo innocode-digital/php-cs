@@ -13,6 +13,7 @@ logs
 
 # Cache
 .cache
+.phpunit.cache
 
 # macOS
 .DS_Store
