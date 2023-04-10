@@ -35,8 +35,6 @@
 
 		<exclude name="Generic.CodeAnalysis.EmptyStatement.DetectedCatch"/>
 
-		<exclude name="WordPress.PHP.DisallowShortTernary"/>
-
 		<exclude name="WordPress.PHP.YodaConditions"/>
 
 		<exclude name="WordPress.PHP.DevelopmentFunctions.error_log_error_log"/>
@@ -169,8 +167,6 @@
 		</properties>
 	</rule>
 	<rule ref="WPD.Security.NonceVerification"/>
-
-	<rule ref="WPD.WP.I18n"/>
 
 	<rule ref="WPD.Whitespace.EmptyLineBeforeReturn"/>
 	<rule ref="WPD.Whitespace.MultipleEmptyLines"/>
